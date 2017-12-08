@@ -1,0 +1,24 @@
+main: HuntingMain.Main
+name: theHunter
+author: PixelsDE
+version: 1.0.0
+description: A Player Hunting Minigame!
+
+commands:
+  start:
+    description: Starts a Game!
+  setlobby:
+    description: Sets the Lobby!
+  setspectator:
+    description: Sets the Spawns of the Spectator!
+  leave:
+    description: Leave the Game!
+    aliases: [l, lobby, hub, left, disconnect, quit]
+  editmode:
+    description: Enables and Disables the Editmode!
+  setspawn:
+    description: Sets the Player-Spawns!
+  arenacenter:
+    description: Sets the Arenacenter!
+  stats:
+    descrption: Gives you infos about the Stats! 
