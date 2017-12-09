@@ -1,16 +1,16 @@
 package listeners;
 
 import HuntingMain.Main;
-import util.Scoreboard;
-import util.Settings;
-import util.StatsSystem;
-import util.special.Var;
+import Util.Scoreboard;
+import Util.Settings;
+import Util.StatsSystem;
+import Util.Var;
 import gamestates.GameStateHandler;
 import gamestates.LobbyState;
-import util.special.LocationCreator;
-import util.Messages;
-import countdowns.EndCountdown;
-import countdowns.LobbyCountdown;
+import methods.LocationCreator;
+import methods.Messages;
+import methods.countdowns.EndCountdown;
+import methods.countdowns.LobbyCountdown;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,7 +53,7 @@ public class EVENTjoin implements Listener {
 
 
 			for (Player a : Bukkit.getOnlinePlayers())
-				util.Scoreboard.updateScoreboard(a);
+				Util.Scoreboard.updateScoreboard(a);
 			p.removePotionEffect(PotionEffectType.SLOW);
 			p.setLevel(0);
 			p.resetPlayerWeather();
@@ -133,7 +133,7 @@ public class EVENTjoin implements Listener {
 				}
 
 				for (Player a : Bukkit.getOnlinePlayers())
-					util.Scoreboard.updateScoreboard(a);
+					Util.Scoreboard.updateScoreboard(a);
 
 				try {
 

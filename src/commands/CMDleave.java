@@ -1,9 +1,9 @@
 package commands;
 //Code by: PixelsDE
 
-import util.Settings;
-import util.special.Var;
-import util.Messages;
+import Util.Settings;
+import Util.Var;
+import methods.Messages;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

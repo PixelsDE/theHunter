@@ -5,8 +5,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityRegainHealthEvent;
 
-import util.Settings;
-import util.special.Var;
+import Util.Settings;
+import Util.Var;
 
 public class EVENTRegeneration implements Listener {
 

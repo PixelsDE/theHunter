@@ -3,10 +3,10 @@ package Guns;
 /*     */ 
 /*     */
 
-import chestitems.Ammo;
+import ChestItems.Ammo;
 import HuntingMain.Main;
-import util.Settings;
-import util.Messages;
+import Util.Settings;
+import methods.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

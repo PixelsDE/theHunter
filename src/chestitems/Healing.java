@@ -1,4 +1,4 @@
-package chestitems;
+package ChestItems;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -10,8 +10,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import util.Settings;
-import util.special.Var;
+
+import Util.Settings;
+import Util.Var;
 
 // Code by: PixelsDE /
 // All Rights Reserved! /

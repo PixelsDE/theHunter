@@ -1,4 +1,4 @@
-package chestitems;
+package ChestItems;
 
 // Code by: PixelsDE /
 
@@ -6,10 +6,14 @@ package chestitems;
 // Website: https://www.spigotmc.org/resources/authors/pixelsde.403284/
 // Youtube: byPixels /
 
+import Guns.AK;
+import Guns.Minigun;
+import Guns.Pistol;
+import Guns.Sniper;
 import HuntingMain.Main;
-import util.Settings;
-import util.special.Var;
-import util.Messages;
+import Util.Settings;
+import Util.Var;
+import methods.Messages;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

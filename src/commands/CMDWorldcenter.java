@@ -8,10 +8,10 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import util.Settings;
-import util.special.Var;
-import util.special.LocationCreator;
-import util.Messages;
+import Util.Settings;
+import Util.Var;
+import methods.LocationCreator;
+import methods.Messages;
 
 public class CMDWorldcenter implements CommandExecutor{
 	

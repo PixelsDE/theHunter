@@ -1,13 +1,14 @@
 package gamestates;
 
-import util.Settings;
+import Util.Settings;
 
-import util.special.Var;
+import Util.Var;
 import listeners.EVENTdeath;
-import util.Messages;
+import methods.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 public abstract class GameState {
 

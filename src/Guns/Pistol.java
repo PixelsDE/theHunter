@@ -5,8 +5,8 @@ package Guns;
 
 import HuntingMain.Main;
 
-import util.Settings;
-import util.Messages;
+import Util.Settings;
+import methods.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -22,7 +22,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import chestitems.Ammo;
+import ChestItems.Ammo;
 
 import java.util.ArrayList;
 
@@ -32,6 +32,12 @@ import java.util.ArrayList;
     /*  68 */   private ArrayList<String> shotPistol1 = new ArrayList();
 
     /*     */
+    public Pistol(Main pluign)
+/*     */ {
+/*  31 */
+        this.plugin = this.plugin;
+/*     */
+    }
 
     public static ItemStack pistol1() {
 /*  71 */

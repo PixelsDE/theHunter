@@ -9,9 +9,9 @@ package commands;
 
 import HuntingMain.Main;
 
-import util.Settings;
-import util.special.LocationCreator;
-import util.Messages;
+import Util.Settings;
+import methods.LocationCreator;
+import methods.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;

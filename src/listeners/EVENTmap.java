@@ -5,10 +5,12 @@ package listeners;
 // Copyright PixelsDE /
 // youtube.com/bypixels /
 
-import util.Settings;
-import util.Messages;
+import Util.Settings;
+import Util.Var;
+import methods.Messages;
 
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Entity;

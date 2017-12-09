@@ -1,19 +1,19 @@
 package gamestates;
 
-import chestitems.Knife;
-import chestitems.MainChest;
+import ChestItems.Knife;
+import ChestItems.MainChest;
 import Guns.AK;
 import Guns.Minigun;
 import Guns.Pistol;
 import Guns.Sniper;
 import HuntingMain.Main;
-import util.Settings;
-import util.special.Var;
-import util.Worldboarder;
+import Util.Settings;
+import Util.Var;
+import Util.Worldboarder;
 import commands.CMDsetspawn;
-import util.special.LocationCreator;
-import util.Messages;
-import countdowns.EndCountdown;
+import methods.LocationCreator;
+import methods.Messages;
+import methods.countdowns.EndCountdown;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;

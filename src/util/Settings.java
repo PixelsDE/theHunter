@@ -1,4 +1,4 @@
-package util;
+package Util;
 //Code by: PixelsDE
 
 import HuntingMain.Main;

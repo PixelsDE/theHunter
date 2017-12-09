@@ -1,4 +1,4 @@
-package util;
+package Util;
 
 
 import HuntingMain.Main;
@@ -12,7 +12,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
-import util.special.Var;
+import org.bukkit.scoreboard.ScoreboardManager;
+
+import com.avaje.ebeaninternal.server.subclass.SubClassManager;
 
 //C ode by: PixelsDE /
 // All rights reserved! /

@@ -1,4 +1,4 @@
-package util;
+package Util;
 
 import org.bukkit.Bukkit;
 
@@ -6,9 +6,11 @@ import org.bukkit.ChatColor;
 import org.bukkit.WorldBorder;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import com.google.common.util.concurrent.AbstractScheduledService.Scheduler;
+
 import HuntingMain.Main;
-import util.special.LocationCreator;
-import util.special.Var;
+import methods.LocationCreator;
+import methods.Messages;
 
 public class Worldboarder {
 

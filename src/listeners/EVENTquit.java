@@ -1,15 +1,15 @@
 package listeners;
 
-import util.Scoreboard;
+import Util.Scoreboard;
 
 
-import util.Settings;
-import util.StatsSystem;
-import util.special.Var;
+import Util.Settings;
+import Util.StatsSystem;
+import Util.Var;
 import gamestates.GameState;
 import gamestates.GameStateHandler;
 import gamestates.LobbyState;
-import util.Messages;
+import methods.Messages;
 
 import java.io.File;
 import java.io.IOException;

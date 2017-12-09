@@ -1,4 +1,4 @@
-package chestitems;
+package ChestItems;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,7 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffectType;
 
 import HuntingMain.Main;
-import util.Settings;
+import Util.Settings;
 
 // Code by: PixelsDE /
 // All Rights Reserved! /

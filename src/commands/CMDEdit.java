@@ -4,9 +4,9 @@ package commands;
 // Copyright PixelsDE /
 // youtube.com/bypixels /
 
-import util.Settings;
-import util.special.Var;
-import util.Messages;
+import Util.Settings;
+import Util.Var;
+import methods.Messages;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -52,9 +52,9 @@ public class CMDEdit implements CommandExecutor {
                         String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
                         p.sendMessage(prefix1 + msg1);
                     }
-                
+
                 }
-            }else{
+            } else {
                 YamlConfiguration cfg1 = Messages.cfg;
                 String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Must_Player"));
                 String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));

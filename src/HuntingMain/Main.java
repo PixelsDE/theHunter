@@ -1,24 +1,24 @@
 package HuntingMain;
 
-import chestitems.Energie;
+import ChestItems.Energie;
 
-import chestitems.Eye;
-import chestitems.Healing;
-import chestitems.Knife;
-import chestitems.MainChest;
-import chestitems.Swapper;
-import chestitems.Tracker;
+import ChestItems.Eye;
+import ChestItems.Healing;
+import ChestItems.Knife;
+import ChestItems.MainChest;
+import ChestItems.Swapper;
+import ChestItems.Tracker;
 import Guns.AK;
 import Guns.Minigun;
 import Guns.Pistol;
 import Guns.Sniper;
-import util.special.Metrics;
-import util.special.Autoupdater;
-import util.Scoreboard;
+import Metrics.Metrics;
+import Util.Autoupdater;
+import Util.Scoreboard;
 
-import util.Settings;
-import util.StatsSystem;
-import util.Worldboarder;
+import Util.Settings;
+import Util.StatsSystem;
+import Util.Worldboarder;
 import commands.*;
 import gamestates.GameState;
 import gamestates.GameStateHandler;
@@ -28,9 +28,10 @@ import listeners.EVENTdeath;
 import listeners.EVENTjoin;
 import listeners.EVENTmap;
 import listeners.EVENTquit;
-import util.Messages;
-import util.Spectator;
-
+import methods.Messages;
+import methods.Spectator;
+import net.minecraft.server.v1_8_R3.GameRules;
+import net.minecraft.server.v1_8_R3.ScoreboardHealthCriteria;
 
 import java.io.IOException;
 
@@ -112,7 +113,7 @@ public class Main extends JavaPlugin implements Listener{
 		pm.registerEvents(new Scoreboard(this), this);
 		pm.registerEvents(new EVENTdeath(this), this);
 		pm.registerEvents(new Sniper(this), this);
-		pm.registerEvents(new Pistol(), this);
+		pm.registerEvents(new Pistol(this), this);
 		pm.registerEvents(new AK(this), this);
 		pm.registerEvents(new Minigun(this), this);
 		pm.registerEvents(new MainChest(this), this);
@@ -151,7 +152,7 @@ public class Main extends JavaPlugin implements Listener{
 	
 	public Damageable damageable(Player p) {
 
-	      return p;
+	      return (Damageable)p;
 	}
 
 }

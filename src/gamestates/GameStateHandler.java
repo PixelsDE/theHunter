@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 import HuntingMain.Main;
-import util.Settings;
+import Util.Settings;
 
 public class GameStateHandler {
 

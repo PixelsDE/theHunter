@@ -1,13 +1,13 @@
 package gamestates;
 
 import HuntingMain.Main;
-import util.Settings;
-import util.Messages;
+import Util.Settings;
+import methods.Messages;
 
 import org.bukkit.Bukkit;
 
 
-import countdowns.LobbyCountdown;
+import methods.countdowns.LobbyCountdown;
 import org.bukkit.ChatColor;
 
 import org.bukkit.configuration.file.YamlConfiguration;

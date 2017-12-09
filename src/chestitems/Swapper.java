@@ -1,4 +1,4 @@
-package chestitems;
+package ChestItems;
 
 import java.util.Random;
 
@@ -16,9 +16,9 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import HuntingMain.Main;
-import util.Settings;
-import util.special.Var;
-import util.Messages;
+import Util.Settings;
+import Util.Var;
+import methods.Messages;
 
 public class Swapper implements Listener{
 	

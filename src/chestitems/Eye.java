@@ -1,5 +1,6 @@
-package chestitems;
+package ChestItems;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
@@ -17,9 +18,9 @@ import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import HuntingMain.Main;
-import util.Settings;
-import util.special.Var;
-import util.Messages;
+import Util.Settings;
+import Util.Var;
+import methods.Messages;
 import net.minecraft.server.v1_8_R3.PacketPlayOutCamera;
 
 // Code by: PixelsDE /

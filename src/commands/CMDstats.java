@@ -8,9 +8,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import util.Settings;
-import util.StatsSystem;
-import util.Messages;
+import Util.Settings;
+import Util.StatsSystem;
+import methods.Messages;
 
 /**
  * @author Daniel
