@@ -14,15 +14,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
-      <library name="Spigot-API.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../API-Plugins/Spigot-API.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="Spigot 1.8.8" level="project" />
   </component>
 </module>

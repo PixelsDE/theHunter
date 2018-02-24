@@ -1,4 +1,4 @@
-main: HuntingMain.Main
+main: me.bypixels.thehunter.main.Main
 name: theHunter
 author: PixelsDE
 version: 1.0.0
@@ -18,7 +18,7 @@ commands:
     description: Enables and Disables the Editmode!
   setspawn:
     description: Sets the Player-Spawns!
-  arenacenter:
+  setarenacenter:
     description: Sets the Arenacenter!
   stats:
     descrption: Gives you infos about the Stats! 

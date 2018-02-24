@@ -1,4 +1,4 @@
 Manifest-Version: 1.0
-Class-Path: HuntingMain
+Class-Path: me.bypixels.thehunter.main
 Main-Class: Main
 
