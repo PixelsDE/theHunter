@@ -12,6 +12,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 
 public class LobbyState extends GameState {
@@ -40,7 +41,9 @@ public class LobbyState extends GameState {
         YamlConfiguration cfg1 = Messages.cfg;
         String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Game_Start"));
         String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
-        Bukkit.broadcastMessage(prefix1 + msg1);
+        for (Player all : Bukkit.getOnlinePlayers()){
+            all.sendMessage(prefix1+msg1);
+        }
 
 
     }

@@ -30,7 +30,7 @@ public class CMDsetSpectator implements CommandExecutor {
 
                 if (p.hasPermission("hunter.setlobby")) {
                     try {
-                        LocationCreator.createConfiguration(p.getLocation(), "Spawn.Spectator", file, cfg);
+                        LocationCreator.createConfiguration(p.getLocation(), "Spawn.EVENTSpectator", file, cfg);
                         YamlConfiguration cfg1 = Messages.cfg;
                         String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Set_Spectator"));
                         String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));

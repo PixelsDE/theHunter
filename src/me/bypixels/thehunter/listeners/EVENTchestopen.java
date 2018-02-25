@@ -14,6 +14,8 @@ import me.bypixels.thehunter.main.Main;
 import me.bypixels.thehunter.util.Messages;
 import me.bypixels.thehunter.util.special.Variables;
 import org.bukkit.ChatColor;
+import org.bukkit.block.Block;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,13 +28,14 @@ public class EVENTchestopen implements Listener{
 
         Player p = e.getPlayer();
         if (GameStateHandler.getCurrentState() instanceof LobbyState || GameStateHandler.getCurrentState() instanceof EndState || Variables.spectating.contains(p)) {
-            if (e.getClickedBlock().getType() != null) {
-                e.setCancelled(true);
+                   if (e.getClickedBlock() instanceof Block) {
+                    e.setCancelled(true);
 
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + Messages.cfg.getString("Not_Interact").replace("%object%", e.getClickedBlock().getType().name())));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + Messages.cfg.getString("Not_Interact").replace("%object%", e.getClickedBlock().getType().name())));
+                }
             }
         }
-    }
+
 
 
     private Main plugin;

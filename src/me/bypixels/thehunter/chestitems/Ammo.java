@@ -9,27 +9,26 @@ package me.bypixels.thehunter.chestitems;
 
 import java.util.ArrayList;
 
-import me.bypixels.thehunter.enums.Guns;
+import me.bypixels.thehunter.enums.Weapons;
 import me.bypixels.thehunter.util.Settings;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 public class Ammo {
 
-    public static ItemStack MGAmmo() {
+    public static ItemStack AKAmmo() {
 
         ArrayList<String> lore = new ArrayList<>();
         /* 71 */
 
 
-        ItemStack item = new ItemStack(Guns.AK.getammomaterial());
+        ItemStack item = new ItemStack(Weapons.AK.getammomaterial());
         /* 72 */
         ItemMeta imeta = item.getItemMeta();
         /* 73 */
         imeta.setDisplayName(
-                ChatColor.translateAlternateColorCodes('&', Guns.AK.getName()));
+                ChatColor.translateAlternateColorCodes('&', Weapons.AK.getName()));
 
         lore.add(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + "§fThis is the Ammo for an AK47");
         imeta.setLore(lore);
@@ -44,12 +43,12 @@ public class Ammo {
 
     public static ItemStack MinigunAmmo() {
         /* 71 */
-        ItemStack item = new ItemStack(Guns.MINIGUN.getammomaterial());
+        ItemStack item = new ItemStack(Weapons.MINIGUN.getammomaterial());
         /* 72 */
         ItemMeta imeta = item.getItemMeta();
         /* 73 */
         imeta.setDisplayName(
-                ChatColor.translateAlternateColorCodes('&', Guns.MINIGUN.getName()));
+                ChatColor.translateAlternateColorCodes('&', Weapons.MINIGUN.getName()));
         ArrayList<String> lore = new ArrayList<>();
         lore.add(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + "§fThis is the Ammo for a Minigun");
         imeta.setLore(lore);
@@ -62,11 +61,12 @@ public class Ammo {
 
     public static ItemStack PistolAmmo() {
         /* 71 */
-        ItemStack item = new ItemStack(Guns.PISTOL.getammomaterial());
+        ItemStack item = new ItemStack(Weapons.PISTOL.getammomaterial());
         /* 72 */
         ItemMeta imeta = item.getItemMeta();
-        /* 73 */        ArrayList<String> lore = new ArrayList<>();
-        lore.add(ChatColor.translateAlternateColorCodes('&', Guns.PISTOL.getName()));
+        /* 73 */
+        ArrayList<String> lore = new ArrayList<>();
+        lore.add(ChatColor.translateAlternateColorCodes('&', Weapons.PISTOL.getName()));
         imeta.setLore(lore);
         imeta.setDisplayName(
                 ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + "§fPistol-Ammo");
@@ -78,11 +78,13 @@ public class Ammo {
 
     public static ItemStack SniperAmmo() {
         /* 71 */
-        ItemStack item = new ItemStack(Guns.SNIPER.getammomaterial());
-        /* 72 */
+        ItemStack item = new ItemStack(Weapons.SNIPER.getammomaterial());
+
         ItemMeta imeta = item.getItemMeta();
-        /* 73 */        ArrayList<String> lore = new ArrayList<>();
-        lore.add(ChatColor.translateAlternateColorCodes('&', Guns.SNIPER.getName()));
+
+        /* 73 */
+        ArrayList<String> lore = new ArrayList<>();
+        lore.add(ChatColor.translateAlternateColorCodes('&', Weapons.SNIPER.getName()));
         imeta.setLore(lore);
         imeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + "§fSniper-Ammo");
         item.setAmount(5);

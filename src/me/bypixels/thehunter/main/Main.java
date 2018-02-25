@@ -6,7 +6,7 @@ import me.bypixels.thehunter.guns.Minigun;
 import me.bypixels.thehunter.guns.Pistol;
 import me.bypixels.thehunter.guns.Sniper;
 import me.bypixels.thehunter.listeners.*;
-import me.bypixels.thehunter.metrics.Metrics;
+import me.bypixels.thehunter.util.special.Metrics;
 
 import me.bypixels.thehunter.chestitems.*;
 import me.bypixels.thehunter.commands.*;
@@ -14,7 +14,7 @@ import me.bypixels.thehunter.gamestates.GameState;
 import me.bypixels.thehunter.gamestates.GameStateHandler;
 
 import me.bypixels.thehunter.util.Messages;
-import me.bypixels.thehunter.util.Spectator;
+import me.bypixels.thehunter.listeners.EVENTSpectator;
 
 import java.io.IOException;
 
@@ -112,7 +112,7 @@ public class Main extends JavaPlugin implements Listener{
 		pm.registerEvents(new EVENTRegeneration(), this);
 		pm.registerEvents(new EnergieDrink(this), this);
 		pm.registerEvents(new Tracker(), this);
-		pm.registerEvents(new Spectator(), this);
+		pm.registerEvents(new EVENTSpectator(), this);
 		pm.registerEvents(new EVENTmap(), this);
 		pm.registerEvents(new EVENTchestopen(this), this);
 

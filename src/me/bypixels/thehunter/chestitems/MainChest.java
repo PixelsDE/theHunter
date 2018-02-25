@@ -66,7 +66,7 @@ public class MainChest implements Listener {
 							Inventory inv = Bukkit.createInventory(null, InventoryType.CHEST);
 							List<ItemStack> items = new ArrayList<>();
 							items.add(Ammo.MinigunAmmo());
-							items.add(Ammo.MGAmmo());
+							items.add(Ammo.AKAmmo());
 							items.add(Ammo.PistolAmmo());
 							items.add(Ammo.SniperAmmo());
 							items.add(HackerEye.theEye());

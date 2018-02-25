@@ -4,8 +4,9 @@ package me.bypixels.thehunter.util.special;
 
 
 import me.bypixels.thehunter.main.Main;
-import me.bypixels.thehunter.methods.Messages;
 
+
+import me.bypixels.thehunter.util.Messages;
 import me.bypixels.thehunter.util.Settings;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

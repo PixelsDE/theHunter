@@ -32,6 +32,8 @@ public class EndCountdown extends me.bypixels.thehunter.countdowns.Countdown {
             nobuild = true;
 
 
+
+
             taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
 
                 @Override
@@ -41,29 +43,37 @@ public class EndCountdown extends me.bypixels.thehunter.countdowns.Countdown {
                     String prefix = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
                     switch (seconds) {
                         case 10:
-                            Bukkit.broadcastMessage(prefix + msg);
-                            for (Player a : Variables.playing)
+                            for (Player a : Bukkit.getOnlinePlayers()) {
                                 a.playSound(a.getLocation(), Sound.LAVA_POP, 1, 1);
+                                a.sendMessage(prefix + msg);
+                            }
                             break;
                         case 5:
-                            Bukkit.broadcastMessage(prefix + msg);
-                            for (Player a : Variables.playing)
+                            for (Player a : Bukkit.getOnlinePlayers()) {
                                 a.playSound(a.getLocation(), Sound.LAVA_POP, 1, 1);
+                                a.sendMessage(prefix + msg);
+                            }
                             break;
                         case 3:
-                            Bukkit.broadcastMessage(prefix + msg);
-                            for (Player a : Variables.playing)
+                            for (Player a : Bukkit.getOnlinePlayers()) {
                                 a.playSound(a.getLocation(), Sound.LAVA_POP, 1, 1);
+                                a.sendMessage(prefix + msg);
+                            }
                             break;
                             case 2:
-                            Bukkit.broadcastMessage(prefix + msg);
-                            for (Player a : Variables.playing)
-                                a.playSound(a.getLocation(), Sound.LAVA_POP, 1, 1);
+
+                                for (Player a : Bukkit.getOnlinePlayers()) {
+                                    a.playSound(a.getLocation(), Sound.LAVA_POP, 1, 1);
+                                    a.sendMessage(prefix + msg);
+                                }
                             break;
                         case 1:
-                            Bukkit.broadcastMessage(prefix + msg);
-                            for (Player a : Variables.playing)
+
+                            for (Player a : Bukkit.getOnlinePlayers()) {
                                 a.playSound(a.getLocation(), Sound.LAVA_POP, 1, 1);
+                                a.sendMessage(prefix + msg);
+                            }
+
                             break;
                         case 0:
                             for (Player a : Bukkit.getOnlinePlayers()) {
@@ -78,10 +88,6 @@ public class EndCountdown extends me.bypixels.thehunter.countdowns.Countdown {
                                 Bukkit.getServer().unloadWorld(Settings.cfg.getString("World_Name"), false);
                                 Bukkit.getServer().createWorld(new WorldCreator(Settings.cfg.getString("World_Name")));
 
-                                Bukkit.getServer().reload();
-                                Bukkit.reload();
-                                Bukkit.getServer().shutdown();
-                                Bukkit.shutdown();
 
                             }
                             break;

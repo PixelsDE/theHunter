@@ -62,11 +62,11 @@ public class IngameState extends GameState {
 					p.getInventory().setItem(2, Pistol.pistol1());
 					p.setGameMode(GameMode.SURVIVAL);
 					p.getInventory().setItem(3, AK.ak1());
-					p.getInventory().setItem(8, Knife.theKnife());
+					p.getInventory().setItem(8, Knife.Knife());
 					p.sendMessage(ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("Game_Start")));
 
 				} else {
-					p.teleport(LocationCreator.getConfigLocation("Spawn.Spectator", Variables.cfg));
+					p.teleport(LocationCreator.getConfigLocation("Spawn.EVENTSpectator", Variables.cfg));
 				}
 
 			}

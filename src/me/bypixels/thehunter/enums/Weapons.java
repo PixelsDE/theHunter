@@ -9,14 +9,13 @@ package me.bypixels.thehunter.enums;
 import me.bypixels.thehunter.main.Main;
 import org.bukkit.Material;
 
-import java.util.ArrayList;
-
-public enum Guns {
+public enum Weapons {
 
     AK(Main.prefix +"§fAK", 3, 1, Material.MAGMA_CREAM),
     MINIGUN(Main.prefix +"§fMinigun", 1, 1, Material.SNOW_BALL),
     PISTOL(Main.prefix +"§fPistol", 4, 3, Material.FIREBALL),
-    SNIPER(Main.prefix +"", 5, 4, Material.ENDER_PEARL);
+    SNIPER(Main.prefix +"§fSniper", 5, 4, Material.ENDER_PEARL),
+    KNIFE(Main.prefix +"§fKnife", 1, 0, Material.WOOD_SWORD);
 
 
     String name;
@@ -25,7 +24,7 @@ public enum Guns {
     Material ammomaterial;
 
 
-    Guns(String name, int damage, int delay, Material ammomaterial) {
+    Weapons(String name, int damage, int delay, Material ammomaterial) {
         this.name = name;
         this.damage = damage;
         this.delay = delay;

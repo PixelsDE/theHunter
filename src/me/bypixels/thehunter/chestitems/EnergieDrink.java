@@ -12,6 +12,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import me.bypixels.thehunter.main.Main;
@@ -67,9 +68,9 @@ public class EnergieDrink implements Listener {
                 e.setCancelled(true);
                 removeItem(p.getInventory(), EnergieDrink().getType(), 1);
                 p.updateInventory();
-                p.getPlayer().addPotionEffect(PotionEffectType.SPEED.createEffect(30, 2));
-                p.getPlayer().addPotionEffect(PotionEffectType.JUMP.createEffect(30, 2));
-                p.getPlayer().addPotionEffect(PotionEffectType.REGENERATION.createEffect(30, 2));
+                p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 30 ,1));
+                p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 30 ,1));
+                p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 30 ,1));
 
             }
         }

@@ -70,13 +70,15 @@ public class Swapper implements Listener {
                     if (p.getItemInHand().getType().equals(Material.TNT)) {
                         e.setCancelled(true);
                         if (p1.getPlayer() != p.getPlayer()) {
-                            Location loc = p.getLocation();
-                            Location loc1 = p1.getLocation();
-                            p.teleport(loc1);
-                            p1.teleport(loc);
-                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("Swapper_Use").replace("%player%", p1.getName())));
-                            p1.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("Swapper_Use").replace("%player%", p.getName())));
-                            removeItem(p.getInventory(), Swapper.SwapperItem().getType(), 1);
+                            if (Variables.playing.contains(p1)) {
+                                Location loc = p.getLocation();
+                                Location loc1 = p1.getLocation();
+                                p.teleport(loc1);
+                                p1.teleport(loc);
+                                p.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("Swapper_Use").replace("%player%", p1.getName())));
+                                p1.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("Swapper_Use").replace("%player%", p.getName())));
+                                removeItem(p.getInventory(), Swapper.SwapperItem().getType(), 1);
+                            }
                         } else {
                             e.setCancelled(true);
                         }

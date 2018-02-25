@@ -30,7 +30,7 @@ public class Messages {
 		cfg.addDefault("Game_Notbuild", "&cYou cant build in the Lobby!");
 		cfg.addDefault("Game_Notdefined", "&cThe Game has not beeen defined!");
 		cfg.addDefault("Game_Nothit", "&cYou cant hit someone in the Lobby!");
-		cfg.addDefault("Game_Quit", "&7The Player &c%player% &7has left the Game! [&n %playing% / %max_players%]");
+		cfg.addDefault("Game_Quit", "&7The Player &c%player% &7has left the Game! &f[&n %playing% &7/ &f%max_players%]&7!");
 		cfg.addDefault("Ingame_Quit", "&7The Player &c%player% &7has left the Game!");
 		cfg.addDefault("Start_Use", "&cPlease just use /start!");
 		cfg.addDefault("Start_Used", "&aThe Gametimer has been speeded up!");

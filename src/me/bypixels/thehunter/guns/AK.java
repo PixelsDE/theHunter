@@ -11,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
@@ -18,6 +19,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -44,6 +46,7 @@ import java.util.ArrayList;
         /*  72 */
         ItemMeta imeta = item.getItemMeta();
         /*  73 */
+
         imeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + "§fAK-47");
         /*  74 */
         item.setItemMeta(imeta);
@@ -55,7 +58,7 @@ import java.util.ArrayList;
 
     public static void removeItem(PlayerInventory inv, Material type, int amount) {
         for (ItemStack is : inv.getContents()) {
-            if (is != null && is.getItemMeta().equals(Ammo.MGAmmo().getItemMeta())) {
+            if (is != null && is.getItemMeta().equals(Ammo.AKAmmo().getItemMeta())) {
                 int newamount = is.getAmount() - amount;
                 if (newamount > 0) {
                     is.setAmount(newamount);
@@ -88,11 +91,11 @@ import java.util.ArrayList;
 
                         ItemStack i = new ItemStack(Material.SNOW_BALL);
                         ItemMeta im = i.getItemMeta();
-                        im.setDisplayName(Ammo.MGAmmo().getItemMeta().getDisplayName());
+                        im.setDisplayName(Ammo.AKAmmo().getItemMeta().getDisplayName());
                         i.setItemMeta(im);
 
 
-                        if (p.getInventory().containsAtLeast(Ammo.MGAmmo(), 1)) {
+                        if (p.getInventory().containsAtLeast(Ammo.AKAmmo(), 1)) {
                             try {
                                 /*  89 */
                                 Snowball a = (Snowball) p.getWorld().spawn(p.getEyeLocation(), Snowball.class);
@@ -105,7 +108,7 @@ import java.util.ArrayList;
                                 this.shoot.add(a);
                                 /*  93 */
                                 a.setShooter(p);
-                                removeItem(p.getInventory(), Ammo.MGAmmo().getType(), 1);
+                                removeItem(p.getInventory(), Ammo.AKAmmo().getType(), 1);
 
                                 p.updateInventory();
 
@@ -128,6 +131,7 @@ import java.util.ArrayList;
                     } else
                         /*     */ {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("Gun_Reload")));
+                        p.playSound(p.getLocation(), Sound.ANVIL_LAND, 1, 1);
                     }
 
 

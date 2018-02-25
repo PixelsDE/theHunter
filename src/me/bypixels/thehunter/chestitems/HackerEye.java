@@ -1,5 +1,6 @@
 package me.bypixels.thehunter.chestitems;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import me.bypixels.thehunter.util.Settings;
@@ -31,6 +32,7 @@ import net.minecraft.server.v1_8_R3.PacketPlayOutCamera;
 public class HackerEye implements Listener {
 
 	private Main plugin;
+
 
 	public HackerEye(Main plugin) {
 		this.plugin = plugin;
@@ -83,6 +85,7 @@ public class HackerEye implements Listener {
 							if (!p1.equals(p)) {
 
 								camera.a = p1.getEntityId();
+
 								p.setGameMode(GameMode.SURVIVAL);
 								p1.setGameMode(GameMode.SURVIVAL);
 								removeItem(p.getInventory(), HackerEye.theEye().getType(), 1);

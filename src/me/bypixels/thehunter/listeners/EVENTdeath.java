@@ -7,6 +7,7 @@ package me.bypixels.thehunter.listeners;
 // Youtube: byPixels /
 
 
+import me.bypixels.thehunter.chestitems.HackerEye;
 import me.bypixels.thehunter.main.Main;
 import me.bypixels.thehunter.gamestates.GameState;
 import me.bypixels.thehunter.util.special.LocationCreator;
@@ -16,6 +17,7 @@ import me.bypixels.thehunter.util.Settings;
 import me.bypixels.thehunter.util.StatsSystem;
 import me.bypixels.thehunter.util.special.Variables;
 import net.minecraft.server.v1_8_R3.PacketPlayInClientCommand;
+import net.minecraft.server.v1_8_R3.PacketPlayOutCamera;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -43,12 +45,22 @@ public class EVENTdeath implements Listener {
         this.plugin = plugin;
     }
 
-
     @EventHandler
     public void onDeath(PlayerDeathEvent e) {
         e.setDeathMessage(null);
         Player p = (Player) e.getEntity();
+        Variables.playing.remove(p);
+        Variables.spectating.add(p);
 
+        for (Player all : Bukkit.getOnlinePlayers()) {
+            if (EVENTSpectator.looking.contains(all)) {
+                PacketPlayOutCamera camera = new PacketPlayOutCamera();
+                camera.a = all.getEntityId();
+                ((CraftPlayer) all).getHandle().playerConnection.sendPacket(camera);
+            } else {
+
+            }
+        }
         Player killer = e.getEntity().getKiller();
         for (Player all : Bukkit.getOnlinePlayers()) {
             if (Variables.playing.contains(all)) {
@@ -101,7 +113,7 @@ public class EVENTdeath implements Listener {
             }
         }
 
-        Bukkit.getWorld(p.getWorld().getName()).spawn(p.getLocation(), LightningStrike.class);
+        p.getWorld().strikeLightning(p.getLocation());
         Block blockchest = p.getWorld().getBlockAt(p.getLocation().add(0, 0.5, 0));
         blockchest.setType(Material.TRAPPED_CHEST);
 

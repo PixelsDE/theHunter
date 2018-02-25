@@ -20,12 +20,13 @@ public abstract class GameState {
 
 	public static void checkWinning(Player p) {
 
-		if (Settings.editmode == false) {
-			if (GameStateHandler.getCurrentState() instanceof IngameState) {
+        if (Settings.editmode == false) {
+            if (GameStateHandler.getCurrentState() instanceof IngameState) {
 
-			    if (Settings.cfg.getBoolean("Can_Win") == true) {
-                    if (Variables.playing.size() == 1 || Variables.playing.size() == 0) {
+                if (Settings.cfg.getBoolean("Can_Win") == true) {
+                    if (Variables.playing.size() == 1) {
                         if (Variables.playing.size() == 1) {
+
 
                             YamlConfiguration cfg1 = Messages.cfg;
                             String msg1 = ChatColor.translateAlternateColorCodes('&',
@@ -38,7 +39,28 @@ public abstract class GameState {
 
                             GameStateHandler.getCurrentState().end();
                             GameStateHandler.setGameState(2);
-                        } else if (Variables.playing.size() == 0) {
+                        }
+                    } else {
+
+                    }
+                }else{
+
+                }
+            } else {
+
+            }
+        }
+
+    }
+
+    public static void checkWinning() {
+
+        if (Settings.editmode == false) {
+            if (GameStateHandler.getCurrentState() instanceof IngameState) {
+
+                if (Settings.cfg.getBoolean("Can_Win") == true) {
+                    if (Variables.playing.size() == 0 || Variables.playing.size() == 1) {
+             if (Variables.playing.size() == 0) {
                             YamlConfiguration cfg1 = Messages.cfg;
                             String msg1 = ChatColor.translateAlternateColorCodes('&', cfg1.getString("Win_MSG"));
                             String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
@@ -55,8 +77,24 @@ public abstract class GameState {
 
                             }
 
-                        } else {
+                        } else if (Variables.playing.size() == 1){
+                 YamlConfiguration cfg1 = Messages.cfg;
+                 for (Player players : Bukkit.getOnlinePlayers()) {
+                     if (Variables.playing.contains(players)) {
+                         String msg1 = ChatColor.translateAlternateColorCodes('&',
+                                 cfg1.getString("Win_Player").replace("%player%", players.getName()));
+                         String prefix1 = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
+                         for (Player all : Bukkit.getOnlinePlayers()) {
+                             all.playSound(players.getLocation(), Sound.LEVEL_UP, 1, 1);
+                             all.sendMessage(prefix1 + msg1);
+                         }
+                     }
 
+
+                 }
+
+                 GameStateHandler.getCurrentState().end();
+                 GameStateHandler.setGameState(2);
                         }
 
                     } else {
@@ -65,10 +103,10 @@ public abstract class GameState {
                 }else{
 
                 }
-			} else {
+            } else {
 
-			}
-		}
+            }
+        }
 
-	}
+    }
 }

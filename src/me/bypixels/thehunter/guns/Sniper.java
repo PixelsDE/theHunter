@@ -11,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
@@ -18,6 +19,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -46,7 +48,7 @@ import java.util.ArrayList;
         ItemStack item = new ItemStack(Material.DIAMOND_HOE);
         /*  72 */
         ItemMeta imeta = item.getItemMeta();
-        /*  73 */
+
         imeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + "§fSniper");
         /*  74 */
         item.setItemMeta(imeta);
@@ -151,6 +153,7 @@ import java.util.ArrayList;
                     } else
                         /*     */ {
                         p.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("Gun_Reload")));
+                        p.playSound(p.getLocation(), Sound.ANVIL_LAND, 1, 1);
                     }
 
 

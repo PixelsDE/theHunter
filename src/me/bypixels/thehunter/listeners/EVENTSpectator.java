@@ -1,4 +1,4 @@
-package me.bypixels.thehunter.util;
+package me.bypixels.thehunter.listeners;
 
 import java.util.ArrayList;
 
@@ -14,13 +14,14 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 import net.minecraft.server.v1_8_R3.PacketPlayOutCamera;
 
-public class Spectator implements Listener {
+public class EVENTSpectator implements Listener {
 
-	public static PacketPlayOutCamera camera = new PacketPlayOutCamera();
+
 	public static ArrayList<Player> looking = new ArrayList<Player>();
 
 	@EventHandler
 	public static void onClick(EntityDamageByEntityEvent e) {
+        PacketPlayOutCamera camera = new PacketPlayOutCamera();
 		if (e.getEntity() instanceof Player) {
 			if (e.getDamager() instanceof Player) {
 			Player p = (Player) e.getDamager();

@@ -37,8 +37,9 @@ public class Settings {
 		cfg.addDefault("Damage_AK", 3);
 		cfg.addDefault("Shoot_Pistol", 3);
 		cfg.addDefault("Damage_Pistol", 2);
-		cfg.addDefault("Shoot_Minigun", 1);
+		cfg.addDefault("Shoot_Minigun", 0);
 		cfg.addDefault("Damage_Minigun", 1);
+		cfg.addDefault("Damage_Knife", 1);
 		cfg.addDefault("Eye_View", 10);
 		cfg.addDefault("Chests_Items", 15);
 		cfg.addDefault("Chests_Refill", 6000);

@@ -55,6 +55,7 @@ public class EVENTjoin implements Listener {
 
 			Variables.localkills.put(p, 0);
 			p.setHealth(p.getMaxHealth());
+			p.setSaturation(20);
 
 
 			for (Player a : Bukkit.getOnlinePlayers())
@@ -88,7 +89,7 @@ public class EVENTjoin implements Listener {
                     Variables.playing.remove(p);
                     Variables.plays.remove(p);
                     Variables.spectating.add(p);
-					p.teleport(LocationCreator.getConfigLocation("Spawn.Spectator", Variables.cfg));
+					p.teleport(LocationCreator.getConfigLocation("Spawn.EVENTSpectator", Variables.cfg));
 					p.setAllowFlight(true);
 					for (Player all : Bukkit.getOnlinePlayers()) {
 						if (Variables.spectating.contains(all)) {

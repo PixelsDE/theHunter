@@ -1,6 +1,7 @@
 package me.bypixels.thehunter.chestitems;
 
 import me.bypixels.thehunter.util.Settings;
+import me.bypixels.thehunter.util.special.Variables;
 import org.bukkit.ChatColor;
 
 import org.bukkit.Material;
@@ -33,23 +34,6 @@ public class Tracker implements Listener {
 		return item;
 	}
 
-	public static void removeItem(PlayerInventory inv, Material type, int amount) {
-		for (ItemStack is : inv.getContents()) {
-			if (is != null && is.getItemMeta().equals(Healing.MediPack().getItemMeta())) {
-				int newamount = is.getAmount() - amount;
-				if (newamount > 0) {
-					is.setAmount(newamount);
-					break;
-				} else {
-					inv.remove(is);
-					amount = -newamount;
-					if (amount == 0)
-						break;
-				}
-			}
-		}
-
-	}
 
 	@EventHandler
 	public void onTrack(PlayerInteractEvent e) {
@@ -62,6 +46,7 @@ public class Tracker implements Listener {
 				    e.setCancelled(true);
 					for (Entity ent : p.getNearbyEntities(1000D, 200D, 1000D)) {
 						if (ent instanceof Player) {
+						    if (Variables.playing.contains(ent)){
 							Player near = (Player) ent;
 							p.setCompassTarget(near.getLocation());
 							p.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"))
@@ -72,7 +57,10 @@ public class Tracker implements Listener {
 							p.updateInventory();
 						} else {
 
-						}
+                            }
+						}else{
+
+                        }
 					}
 
 					p.updateInventory();
