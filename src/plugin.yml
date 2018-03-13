@@ -1,8 +1,8 @@
-main: me.bypixels.thehunter.main.Main
+main: de.bypixels.thehunter.main.Main
 name: theHunter
 author: PixelsDE
 version: 1.0.0
-description: A Player Hunting Minigame!
+description: This is a big Minigame for Spigot and Bungeecord Server called TheHunter!
 
 commands:
   start:
