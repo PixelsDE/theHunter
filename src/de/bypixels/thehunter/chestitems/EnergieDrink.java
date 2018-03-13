@@ -1,6 +1,7 @@
 package de.bypixels.thehunter.chestitems;
 
 import de.bypixels.thehunter.util.Settings;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,6 +16,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import de.bypixels.thehunter.main.Main;
+import org.bukkit.scheduler.BukkitRunnable;
 
 
 // Code by: PixelsDE /
@@ -22,12 +24,14 @@ import de.bypixels.thehunter.main.Main;
 // Website: https://www.spigotmc.org/resources/authors/pixelsde.403284/
 // Youtube: byPixels /
 
-public class EnergieDrink implements Listener {
+public class EnergieDrink extends BukkitRunnable implements Listener {
 
     private static Main plugin;
-
-    public EnergieDrink(Main plugin) {
+Player p;
+    public EnergieDrink(Main plugin, Player p) {
         this.plugin = plugin;
+
+        this.p = p;
     }
 
     public static ItemStack EnergieDrink() {
@@ -39,6 +43,15 @@ public class EnergieDrink implements Listener {
         item.setAmount(1);
         return item;
 
+    }
+
+
+
+    @Override
+    public void run() {
+        p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 30*20 ,1));
+        p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 30*20 ,1));
+        p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 30*20 ,1));
     }
 
     private void removeItem(PlayerInventory inv, Material type, int amount) {
@@ -67,9 +80,7 @@ public class EnergieDrink implements Listener {
                 e.setCancelled(true);
                 removeItem(p.getInventory(), EnergieDrink().getType(), 1);
                 p.updateInventory();
-                p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 30 ,1));
-                p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 30 ,1));
-                p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 30 ,1));
+                Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new EnergieDrink(Main.getPlugin(), p));
 
             }
         }
