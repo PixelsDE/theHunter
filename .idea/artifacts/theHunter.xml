@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" build-on-make="true" name="theHunter">
-    <output-path>$PROJECT_DIR$/../../Mc Server/plugins</output-path>
+    <output-path>E:/Users/User/Daniel/Programmieren/Spigot Server/plugins</output-path>
     <root id="archive" name="theHunter.jar">
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />

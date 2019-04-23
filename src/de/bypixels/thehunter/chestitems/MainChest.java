@@ -6,7 +6,7 @@ package de.bypixels.thehunter.chestitems;
 // Website: https://www.spigotmc.org/resources/authors/pixelsde.403284/
 // Youtube: byPixels /
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.special.Variables;
 
 import de.bypixels.thehunter.util.Messages;
@@ -32,12 +32,12 @@ import java.util.Random;
 
 public class MainChest implements Listener {
 
-	private Main plugin;
+	private theHunterMain plugin;
 
 	public static boolean auffullen = false;
 	private int seconds = Settings.cfg.getInt("Chests_Items");
 
-	public MainChest(Main plugin) {
+	public MainChest(theHunterMain plugin) {
 		this.plugin = plugin;
 	}
 
@@ -87,7 +87,7 @@ public class MainChest implements Listener {
 							}
 
 							chests.put(loc, inv);
-							Bukkit.getScheduler().scheduleAsyncRepeatingTask(Main.getPlugin(), new Runnable() {
+							Bukkit.getScheduler().scheduleAsyncRepeatingTask(theHunterMain.getPlugin(), new Runnable() {
 								@Override
 								public void run() {
 									seconds--;

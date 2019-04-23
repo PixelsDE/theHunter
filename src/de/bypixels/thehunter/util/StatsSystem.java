@@ -13,7 +13,7 @@ import java.io.IOException;
 // Youtube: byPixels /
 public class StatsSystem implements Listener {
 
-    public static File file = new File("plugins/theHunter/stats.yml");
+    public static File file = new File("plugins/theHunterMain/stats.yml");
     public Player p;
     public static YamlConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 

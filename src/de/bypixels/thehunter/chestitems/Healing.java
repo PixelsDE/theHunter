@@ -1,6 +1,6 @@
 package de.bypixels.thehunter.chestitems;
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.special.Variables;
 import de.bypixels.thehunter.util.Settings;
 import org.bukkit.ChatColor;
@@ -23,7 +23,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class Healing implements Listener {
 
 	public static ItemStack MediPack() {
-		ItemStack item = new ItemStack(Material.GOLD_RECORD);
+		ItemStack item = new ItemStack(Material.LEGACY_GOLD_RECORD);
 		ItemMeta im = item.getItemMeta();
 		im.setDisplayName(
 				ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix") + "§fMedi-Pack"));
@@ -32,8 +32,8 @@ public class Healing implements Listener {
 		return item;
 	}
 
-    private Main plugin;
-    public  Healing(Main plugin)
+    private theHunterMain plugin;
+    public  Healing(theHunterMain plugin)
         /*     */ {
         this.plugin = plugin;
 

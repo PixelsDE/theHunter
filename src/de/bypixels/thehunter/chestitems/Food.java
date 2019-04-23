@@ -11,7 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class Food {
 	
 	public static ItemStack Food() {
-		ItemStack item = new ItemStack(Material.MUSHROOM_SOUP); 
+		ItemStack item = new ItemStack(Material.MUSHROOM_STEW);
 			ItemMeta im = item.getItemMeta();
 			im.setDisplayName(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix") + "§fFood"));
 			item.setAmount(1);

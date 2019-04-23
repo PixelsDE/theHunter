@@ -1,7 +1,7 @@
 package de.bypixels.thehunter.util;
 
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.special.Variables;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -20,10 +20,10 @@ import org.bukkit.scoreboard.Score;
 // Youtube: byPixels /
 public class Scoreboard implements Listener {
 
-    private static Main plugin;
+    private static theHunterMain plugin;
     int sched;
 
-    public Scoreboard(Main plugin) {
+    public Scoreboard(theHunterMain plugin) {
         Scoreboard.plugin = plugin;
     }
 

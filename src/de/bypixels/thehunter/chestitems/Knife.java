@@ -6,7 +6,7 @@ package de.bypixels.thehunter.chestitems;
 // Youtube: byPixels /
 
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.enums.Weapons;
 
 import de.bypixels.thehunter.util.Settings;
@@ -23,9 +23,9 @@ import java.util.ArrayList;
 
 public class Knife implements Listener {
 
-    private Main plugin;
+    private theHunterMain plugin;
 
-    public Knife(Main plugin) {
+    public Knife(theHunterMain plugin) {
         this.plugin = plugin;
     }
 
@@ -34,7 +34,7 @@ public class Knife implements Listener {
         ItemStack item = new ItemStack(Weapons.KNIFE.getammomaterial());
         ItemMeta im = item.getItemMeta();
         im.setDisplayName(ChatColor.translateAlternateColorCodes('&', Weapons.KNIFE.getName()));
-        lore.add(ChatColor.translateAlternateColorCodes('&', Main.prefix + "§fThe classic Game-Knife"));
+        lore.add(ChatColor.translateAlternateColorCodes('&', theHunterMain.prefix + "§fThe classic Game-Knife"));
         im.setLore(lore);
 
         item.setItemMeta(im);

@@ -1,6 +1,6 @@
 package de.bypixels.thehunter.util;
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.special.LocationCreator;
 import de.bypixels.thehunter.util.special.Variables;
 import org.bukkit.Bukkit;
@@ -11,9 +11,9 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 public class Worldboarder {
 
-	private Main plugin;
+	private theHunterMain plugin;
 
-	public Worldboarder(Main plugin) {
+	public Worldboarder(theHunterMain plugin) {
 		this.plugin = plugin;
 	}
 
@@ -51,7 +51,7 @@ public class Worldboarder {
 		}
 		border.setSize(maxsize);
 		border.setDamageAmount(Settings.cfg.getInt("Border_Damage"));
-		Bukkit.getScheduler().scheduleAsyncRepeatingTask(Main.getPlugin(), new Runnable() {
+		Bukkit.getScheduler().scheduleAsyncRepeatingTask(theHunterMain.getPlugin(), new Runnable() {
 
 			@Override
 			public void run() {

@@ -10,17 +10,13 @@ import de.bypixels.thehunter.guns.Minigun;
 import de.bypixels.thehunter.guns.Pistol;
 import de.bypixels.thehunter.guns.Sniper;
 import de.bypixels.thehunter.util.*;
-import de.bypixels.thehunter.listeners.*;
 import de.bypixels.thehunter.util.special.Metrics;
 
-import de.bypixels.thehunter.chestitems.*;
-import de.bypixels.thehunter.commands.*;
 import de.bypixels.thehunter.gamestates.GameState;
 import de.bypixels.thehunter.gamestates.GameStateHandler;
 
 import java.io.IOException;
 
-import de.bypixels.thehunter.util.*;
 import de.bypixels.thehunter.util.special.Autoupdater;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -33,12 +29,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Main extends JavaPlugin implements Listener{
+public class theHunterMain extends JavaPlugin implements Listener{
 
-	public static Main plugin;
+	public static theHunterMain plugin;
 
 	public static String prefix;
-	public static Main getPlugin() {
+	public static theHunterMain getPlugin() {
 		return plugin;
 	}
 
@@ -73,7 +69,7 @@ public class Main extends JavaPlugin implements Listener{
 		Settings.editmode = false;
 		for (Block blocks : EVENTdeath.DeathChest.keySet()) {
 			blocks.setType(Material.AIR);
-		
+
 	        try {
 	            StatsSystem.cfg.save(StatsSystem.file);
 	        } catch (IOException e1) {
@@ -95,7 +91,7 @@ public class Main extends JavaPlugin implements Listener{
 		this.getCommand("setspawn").setExecutor(new CMDsetspawn(this));
 		this.getCommand("setarenacenter").setExecutor(new CMDWorldcenter());
 		this.getCommand("stats").setExecutor(new CMDstats());
-		
+
 		PluginManager pm = Bukkit.getPluginManager();
 
 		pm.registerEvents(new EVENTjoin(this), this);
@@ -134,16 +130,16 @@ public class Main extends JavaPlugin implements Listener{
 		}
 
 	}
-	
-	
+
+
 	public int getHealth(Player p) {
         return (int)StrictMath.ceil(damageable(p).getHealth());
 	}
-        
-	
+
+
 	public Damageable damageable(Player p) {
 
-	      return (Damageable)p;
+	      return (Damageable) p;
 	}
 
 }

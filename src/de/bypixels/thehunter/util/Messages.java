@@ -1,7 +1,7 @@
 package de.bypixels.thehunter.util;
 //Code by: PixelsDE
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class Messages {
 
-	private static Main plugin;
+	private static theHunterMain plugin;
 
-	public Messages(Main plugin) {
+	public Messages(theHunterMain plugin) {
 		this.plugin = plugin;
 	}
 
-	public static File File = new File("plugins/theHunter/messages.yml");
+	public static File File = new File("plugins/theHunterMain/messages.yml");
 	public static YamlConfiguration cfg = YamlConfiguration.loadConfiguration(File);
 
 	public static void setMessages() {

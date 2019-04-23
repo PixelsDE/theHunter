@@ -1,6 +1,6 @@
 package de.bypixels.thehunter.countdowns;
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.special.Variables;
 import de.bypixels.thehunter.gamestates.GameState;
 import de.bypixels.thehunter.gamestates.GameStateHandler;
@@ -17,11 +17,11 @@ import org.bukkit.entity.Player;
 public class LobbyCountdown extends Countdown {
 
 	public static boolean isIdling = false, isRunning = false;
-	private Main plugin;
+	private theHunterMain plugin;
 	private int seconds = 60;
 	private int taskID, idleID;
 
-	public LobbyCountdown(Main plugin) {
+	public LobbyCountdown(theHunterMain plugin) {
 		this.plugin = plugin;
 	}
 
@@ -30,7 +30,7 @@ public class LobbyCountdown extends Countdown {
 		if (Settings.cfg.getBoolean("Edit_Mode") == false) {
 			isRunning = true;
 
-			taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+			taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(theHunterMain.getPlugin(), new Runnable() {
 
 				@Override
 				public void run() {
@@ -115,7 +115,7 @@ public class LobbyCountdown extends Countdown {
 	public void idle() {
 		if (Settings.cfg.getBoolean("Edit_Mode") == false) {
 			isIdling = true;
-			idleID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+			idleID = Bukkit.getScheduler().scheduleSyncRepeatingTask(theHunterMain.getPlugin(), new Runnable() {
 
 				@Override
 				public void run() {

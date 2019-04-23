@@ -1,6 +1,6 @@
 package de.bypixels.thehunter.chestitems;
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.special.Variables;
 import de.bypixels.thehunter.util.Settings;
 import org.bukkit.ChatColor;
@@ -35,7 +35,7 @@ public class Tracker implements Listener {
 	}
 
     /*     */ private org.bukkit.craftbukkit.Main plugin;
-    public Tracker (Main pluign)
+    public Tracker (theHunterMain pluign)
         /*     */ {
         /*  31 */
         this.plugin = plugin;

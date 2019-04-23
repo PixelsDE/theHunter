@@ -14,7 +14,7 @@ public class Var {
     public static ArrayList<Player> playing = new ArrayList<>();
     public static ArrayList<Player> spectating = new ArrayList<>();
 
-    public static File cfgFile = new File("plugins/theHunter/places/locations.yml");
+    public static File cfgFile = new File("plugins/theHunterMain/places/locations.yml");
     public static YamlConfiguration cfg = YamlConfiguration.loadConfiguration(cfgFile);
 
 

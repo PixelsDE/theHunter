@@ -7,7 +7,7 @@ package de.bypixels.thehunter.commands;
 // Website: https://www.spigotmc.org/resources/authors/pixelsde.403284/
 // Youtube: byPixels /
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Settings;
 import de.bypixels.thehunter.util.special.LocationCreator;
 
@@ -27,13 +27,13 @@ public class CMDsetspawn implements CommandExecutor {
 
 	public static int i = 1;
 
-	private Main plugin;
+	private theHunterMain plugin;
 
-	public CMDsetspawn(Main plugin) {
+	public CMDsetspawn(theHunterMain plugin) {
 		this.plugin = plugin;
 	}
 
-	public static File file = new File("plugins/theHunter/spawns.yml");
+	public static File file = new File("plugins/theHunterMain/spawns.yml");
 
 	public static YamlConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 

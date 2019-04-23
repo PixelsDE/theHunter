@@ -6,16 +6,16 @@ package de.bypixels.thehunter.enums;
 // Date: 24.02.2018 
 // Copyright PixelsDE 
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import org.bukkit.Material;
 
 public enum Weapons {
 
-    AK(Main.prefix +"§fAK", 3, 1, Material.MAGMA_CREAM),
-    MINIGUN(Main.prefix +"§fMinigun", 1, 1, Material.SNOW_BALL),
-    PISTOL(Main.prefix +"§fPistol", 4, 3, Material.FIREBALL),
-    SNIPER(Main.prefix +"§fSniper", 5, 4, Material.ENDER_PEARL),
-    KNIFE(Main.prefix +"§fKnife", 1, 0, Material.WOOD_SWORD);
+    AK(theHunterMain.prefix +"§fAK", 3, 1, Material.MAGMA_CREAM),
+    MINIGUN(theHunterMain.prefix +"§fMinigun", 1, 1, Material.SNOWBALL),
+    PISTOL(theHunterMain.prefix +"§fPistol", 4, 3, Material.LEGACY_FIREBALL),
+    SNIPER(theHunterMain.prefix +"§fSniper", 5, 4, Material.ENDER_PEARL),
+    KNIFE(theHunterMain.prefix +"§fKnife", 1, 0, Material.WOODEN_SWORD);
 
     String name;
     int damage;

@@ -9,7 +9,7 @@ package de.bypixels.thehunter.listeners;
 import de.bypixels.thehunter.gamestates.EndState;
 import de.bypixels.thehunter.gamestates.GameStateHandler;
 import de.bypixels.thehunter.gamestates.LobbyState;
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.special.Variables;
 import org.bukkit.ChatColor;
@@ -29,16 +29,16 @@ public class EVENTchestopen implements Listener{
                    if (e.getClickedBlock() instanceof Block) {
                     e.setCancelled(true);
 
-                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', Main.prefix + Messages.cfg.getString("Not_Interact").replace("%object%", e.getClickedBlock().getType().name())));
+                    p.sendMessage(ChatColor.translateAlternateColorCodes('&', theHunterMain.prefix + Messages.cfg.getString("Not_Interact").replace("%object%", e.getClickedBlock().getType().name())));
                 }
             }
         }
 
 
 
-    private Main plugin;
+    private theHunterMain plugin;
 
-    public EVENTchestopen(Main plugin) {
+    public EVENTchestopen(theHunterMain plugin) {
         this.plugin = plugin;
     }
 }

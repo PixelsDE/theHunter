@@ -3,7 +3,7 @@ package de.bypixels.thehunter.gamestates;
 import java.util.ArrayList;
 
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Settings;
 
 public class GameStateHandler {
@@ -14,7 +14,7 @@ public class GameStateHandler {
     public GameStateHandler() {
         if (Settings.editmode == false) {
             states.add(new LobbyState());
-            states.add(new IngameState(Main.getPlugin()));
+            states.add(new IngameState(theHunterMain.getPlugin()));
         }else {
 
         }

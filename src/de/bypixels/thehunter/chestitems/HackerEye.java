@@ -2,14 +2,17 @@ package de.bypixels.thehunter.chestitems;
 
 import java.util.Random;
 
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Settings;
 import de.bypixels.thehunter.util.special.Variables;
-import net.minecraft.server.v1_12_R1.PacketPlayOutCamera;
+
+import net.minecraft.server.v1_13_R2.PacketPlayOutCamera;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
+
+import org.bukkit.craftbukkit.v1_13_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,8 +21,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
-
-import de.bypixels.thehunter.main.Main;
 
 import de.bypixels.thehunter.util.Messages;
 
@@ -31,15 +32,15 @@ import de.bypixels.thehunter.util.Messages;
 
 public class HackerEye implements Listener {
 
-	private Main plugin;
+	private theHunterMain plugin;
 
 
-	public HackerEye(Main plugin) {
+	public HackerEye(theHunterMain plugin) {
 		this.plugin = plugin;
 	}
 
 	public static ItemStack theEye() {
-		ItemStack item = new ItemStack(Material.EYE_OF_ENDER);
+		ItemStack item = new ItemStack(Material.ENDER_EYE);
 		ItemMeta im = item.getItemMeta();
 		im.setDisplayName(
 				ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix") + "§fHackerEye"));
@@ -75,7 +76,7 @@ public class HackerEye implements Listener {
 
 			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
 				if (p.getItemInHand().hasItemMeta()) {
-					if (p.getItemInHand().getType().equals(Material.EYE_OF_ENDER)) {
+					if (p.getItemInHand().getType().equals(Material.ENDER_EYE)) {
 
 					    e.setCancelled(true);
 						int PlayerNr = new Random().nextInt(Bukkit.getOnlinePlayers().size());
@@ -95,7 +96,7 @@ public class HackerEye implements Listener {
 										+ ChatColor.translateAlternateColorCodes('&',
 										Messages.cfg.getString("theEye_Use").replace("%player%", p1.getName())));
 
-								Bukkit.getScheduler().scheduleAsyncDelayedTask(Main.getPlugin(), new Runnable() {
+								Bukkit.getScheduler().scheduleAsyncDelayedTask(theHunterMain.getPlugin(), new Runnable() {
 									@Override
 									public void run() {
 										PacketPlayOutCamera camera = new PacketPlayOutCamera();

@@ -1,6 +1,6 @@
 package de.bypixels.thehunter.listeners;
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Settings;
 import de.bypixels.thehunter.util.special.Variables;
 import org.bukkit.entity.Player;
@@ -12,7 +12,7 @@ import org.bukkit.event.entity.EntityRegainHealthEvent;
 
 public class EVENTRegeneration implements Listener {
     /*     */ private org.bukkit.craftbukkit.Main plugin;
-    public EVENTRegeneration(Main pluign)
+    public EVENTRegeneration(theHunterMain pluign)
         /*     */ {
         /*  31 */
         this.plugin = plugin;

@@ -2,12 +2,14 @@ package de.bypixels.thehunter.listeners;
 
 import java.util.ArrayList;
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.special.Variables;
-import net.minecraft.server.v1_12_R1.PacketPlayOutCamera;
+
+import net.minecraft.server.v1_13_R2.PacketPlayOutCamera;
 import org.bukkit.Bukkit;
 
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
+
+import org.bukkit.craftbukkit.v1_13_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -19,7 +21,7 @@ import org.bukkit.event.player.PlayerToggleSneakEvent;
 
 public class EVENTSpectator implements Listener {
     /*     */ private org.bukkit.craftbukkit.Main plugin;
-    public EVENTSpectator(Main pluign)
+    public EVENTSpectator(theHunterMain pluign)
         /*     */ {
         /*  31 */
         this.plugin = plugin;

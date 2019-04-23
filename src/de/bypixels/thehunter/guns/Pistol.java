@@ -3,7 +3,7 @@ package de.bypixels.thehunter.guns;
 /*     */ 
 /*     */
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 
 
 import de.bypixels.thehunter.chestitems.Ammo;
@@ -34,7 +34,7 @@ import java.util.ArrayList;
     /*  68 */   private ArrayList<String> shotPistol1 = new ArrayList();
 
     /*     */
-    public Pistol(Main pluign)
+    public Pistol(theHunterMain pluign)
 /*     */ {
 /*  31 */
         this.plugin = this.plugin;
@@ -109,7 +109,7 @@ import java.util.ArrayList;
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("No_Ammo")));
                         }
 /*  95 */
-                        Bukkit.getScheduler().scheduleAsyncDelayedTask(Main.getPlugin(), new Runnable()
+                        Bukkit.getScheduler().scheduleAsyncDelayedTask(theHunterMain.getPlugin(), new Runnable()
 /*     */ {
 
                             public void run() {
@@ -158,7 +158,7 @@ import java.util.ArrayList;
         if (((e.getAction() == Action.RIGHT_CLICK_AIR) || (e.getAction() == Action.RIGHT_CLICK_BLOCK))) {
             if (p.getItemInHand().hasItemMeta()) {
 /*  85 */
-                if (p.getItemInHand().getType().equals(Material.FIREBALL)) {
+                if (p.getItemInHand().getType().equals(Material.LEGACY_FIREBALL)) {
 /*  86 */   p.playSound(p.getLocation(), Sound.BLOCK_ANVIL_LAND, 1, 1);
                     e.setCancelled(true);
                     p.updateInventory();

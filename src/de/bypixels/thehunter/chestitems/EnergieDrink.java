@@ -1,5 +1,6 @@
 package de.bypixels.thehunter.chestitems;
 
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Settings;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -15,7 +16,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import de.bypixels.thehunter.main.Main;
 import org.bukkit.scheduler.BukkitRunnable;
 
 
@@ -26,12 +26,13 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class EnergieDrink extends BukkitRunnable implements Listener {
 
-    private static Main plugin;
-Player p;
-    public EnergieDrink(Main plugin, Player p) {
+    private static theHunterMain plugin;
+
+    private Player p;
+    public EnergieDrink(theHunterMain plugin) {
         this.plugin = plugin;
 
-        this.p = p;
+
     }
 
     public static ItemStack EnergieDrink() {
@@ -49,6 +50,7 @@ Player p;
 
     @Override
     public void run() {
+
         p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 30*20 ,1));
         p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.JUMP, 30*20 ,1));
         p.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 30*20 ,1));
@@ -75,12 +77,12 @@ Player p;
     @EventHandler
     public void onDrink(PlayerInteractEvent e) {
         if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            Player p = e.getPlayer();
+            p = e.getPlayer();
             if (p.getItemInHand().equals(EnergieDrink())) {
                 e.setCancelled(true);
                 removeItem(p.getInventory(), EnergieDrink().getType(), 1);
                 p.updateInventory();
-                Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new EnergieDrink(Main.getPlugin(), p));
+                Bukkit.getScheduler().scheduleSyncDelayedTask(theHunterMain.getPlugin(), new EnergieDrink(theHunterMain.getPlugin()));
 
             }
         }

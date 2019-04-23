@@ -3,7 +3,7 @@ package de.bypixels.thehunter.util.special;
 
 
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 
 
 import de.bypixels.thehunter.util.Messages;
@@ -18,8 +18,8 @@ import java.net.URL;
 
 public class Autoupdater {
 
-    private static Main plugin;
-    public Autoupdater(Main plugin){
+    private static theHunterMain plugin;
+    public Autoupdater(theHunterMain plugin){
 
         Autoupdater.plugin = plugin;
 
@@ -37,7 +37,7 @@ public class Autoupdater {
                 con.getOutputStream().write(("key=98BE0FE67F88AB82B4C197FAF1DC3B69206EFDCC4D3B80FC83A00037510B99B4&resource=" + resourceId)
                         .getBytes("UTF-8"));
                 String version = new BufferedReader(new java.io.InputStreamReader(con.getInputStream())).readLine();
-                if (!version.equals(Main.getPlugin().getDescription().getVersion())) {
+                if (!version.equals(theHunterMain.getPlugin().getDescription().getVersion())) {
                     YamlConfiguration cfg = Messages.cfg;
                     String msg = ChatColor.translateAlternateColorCodes('&', cfg.getString("Autoupdate"));
                     String prefix = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));

@@ -6,7 +6,7 @@ package de.bypixels.thehunter.listeners;
 // youtube.com/bypixels /
 
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Settings;
 
@@ -29,7 +29,7 @@ public class EVENTmap implements Listener {
 
 	public static ArrayList<Block> playerblock = new ArrayList<>();
     /*     */ private org.bukkit.craftbukkit.Main plugin;
-    public EVENTmap(Main pluign)
+    public EVENTmap(theHunterMain pluign)
         /*     */ {
         /*  31 */
         this.plugin = plugin;

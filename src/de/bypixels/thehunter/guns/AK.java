@@ -3,7 +3,7 @@ package de.bypixels.thehunter.guns;
 /*     */
 /*     */
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.chestitems.Ammo;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Settings;
@@ -31,7 +31,7 @@ import java.util.ArrayList;
     private ArrayList<Snowball> shoot = new ArrayList();
 
     /*     */ private org.bukkit.craftbukkit.Main plugin;
-    public AK(Main pluign)
+    public AK(theHunterMain pluign)
     /*     */ {
         /*  31 */
         this.plugin = plugin;
@@ -40,7 +40,7 @@ import java.util.ArrayList;
 
     public static ItemStack ak1() {
         /*  71 */
-        ItemStack item = new ItemStack(Material.GOLD_HOE);
+        ItemStack item = new ItemStack(Material.GOLDEN_HOE);
         /*  72 */
         ItemMeta imeta = item.getItemMeta();
         /*  73 */
@@ -87,7 +87,7 @@ import java.util.ArrayList;
 
                     if (!this.shotMG1.contains(p.getName()))/**/ {
 
-                        ItemStack i = new ItemStack(Material.SNOW_BALL);
+                        ItemStack i = new ItemStack(Material.SNOWBALL);
                         ItemMeta im = i.getItemMeta();
                         im.setDisplayName(Ammo.AKAmmo().getItemMeta().getDisplayName());
                         i.setItemMeta(im);
@@ -120,7 +120,7 @@ import java.util.ArrayList;
                         }
 
 
-                        Bukkit.getScheduler().scheduleAsyncDelayedTask(Main.getPlugin(), new Runnable() {
+                        Bukkit.getScheduler().scheduleAsyncDelayedTask(theHunterMain.getPlugin(), new Runnable() {
                             public void run() {
                                 /*  99 */
                                 shotMG1.remove(p.getName());

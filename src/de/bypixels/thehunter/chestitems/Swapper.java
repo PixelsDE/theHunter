@@ -1,6 +1,6 @@
 package de.bypixels.thehunter.chestitems;
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.special.Variables;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Settings;
@@ -22,9 +22,9 @@ import java.util.Random;
 public class Swapper implements Listener {
 
 
-    private Main plugin;
+    private theHunterMain plugin;
 
-    public Swapper(Main plugin) {
+    public Swapper(theHunterMain plugin) {
         this.plugin = plugin;
     }
 

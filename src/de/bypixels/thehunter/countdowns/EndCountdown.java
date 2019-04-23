@@ -1,7 +1,7 @@
 package de.bypixels.thehunter.countdowns;
 
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Settings;
 import de.bypixels.thehunter.util.special.Variables;
 import de.bypixels.thehunter.util.Messages;
@@ -18,11 +18,11 @@ import org.bukkit.entity.Player;
 public class EndCountdown extends Countdown {
 
     public static boolean nobuild = false;
-    private static Main plugin;
+    private static theHunterMain plugin;
     private int taskID;
     private int seconds = 10;
 
-    public EndCountdown(Main plugin) {
+    public EndCountdown(theHunterMain plugin) {
         EndCountdown.plugin = plugin;
     }
 
@@ -34,7 +34,7 @@ public class EndCountdown extends Countdown {
 
 
 
-            taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+            taskID = Bukkit.getScheduler().scheduleSyncRepeatingTask(theHunterMain.getPlugin(), new Runnable() {
 
                 @Override
                 public void run() {

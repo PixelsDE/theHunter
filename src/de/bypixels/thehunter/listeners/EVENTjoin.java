@@ -4,7 +4,7 @@ import de.bypixels.thehunter.countdowns.EndCountdown;
 import de.bypixels.thehunter.countdowns.LobbyCountdown;
 import de.bypixels.thehunter.gamestates.GameStateHandler;
 import de.bypixels.thehunter.gamestates.LobbyState;
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Scoreboard;
 import de.bypixels.thehunter.util.Settings;
@@ -35,9 +35,9 @@ import org.bukkit.potion.PotionEffectType;
 
 public class EVENTjoin implements Listener {
 
-	private static Main plugin;
+	private static theHunterMain plugin;
     @SuppressWarnings("deprecation")
-	public EVENTjoin(Main plugin) {
+	public EVENTjoin(theHunterMain plugin) {
 		this.plugin = plugin;
 	}
 

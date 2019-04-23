@@ -1,7 +1,7 @@
 package de.bypixels.thehunter.util;
 //Code by: PixelsDE
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
@@ -9,13 +9,13 @@ import java.io.IOException;
 
 public class Settings {
 
-	private static Main plugin;
+	private static theHunterMain plugin;
 
-	public Settings(Main plugin) {
+	public Settings(theHunterMain plugin) {
 		Settings.plugin = plugin;
 	}
 
-	public static File cfgFile = new File("plugins/theHunter/settings.yml");
+	public static File cfgFile = new File("plugins/theHunterMain/settings.yml");
 	public static YamlConfiguration cfg = YamlConfiguration.loadConfiguration(cfgFile);
 	public static String pl = new String();
 	public static boolean editmode = cfg.getBoolean("Edit_Mode");

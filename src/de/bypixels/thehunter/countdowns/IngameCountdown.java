@@ -2,7 +2,7 @@ package de.bypixels.thehunter.countdowns;
 
 
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Settings;
 import org.bukkit.Bukkit;
@@ -14,9 +14,9 @@ import org.bukkit.entity.Player;
 
 public class IngameCountdown {
 
-	private Main plugin;
+	private theHunterMain plugin;
 
-	public IngameCountdown(Main plugin) {
+	public IngameCountdown(theHunterMain plugin) {
 		this.plugin = plugin;
 	}
 
@@ -30,7 +30,7 @@ public class IngameCountdown {
 	@SuppressWarnings("deprecation")
 	public static void FinalCountDown(){
 		if (startFinalCountdown == 0) {
-			TaskID = Bukkit.getScheduler().scheduleAsyncRepeatingTask(Main.getPlugin(), new Runnable() {
+			TaskID = Bukkit.getScheduler().scheduleAsyncRepeatingTask(theHunterMain.getPlugin(), new Runnable() {
 
 
 				@Override

@@ -3,7 +3,7 @@ package de.bypixels.thehunter.guns;
 /*     */
 /*     */
 
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.chestitems.Ammo;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Settings;
@@ -34,7 +34,7 @@ import java.util.ArrayList;
     }
 
     /*     */
-    public Sniper(Main pluign)
+    public Sniper(theHunterMain pluign)
     /*     */ {
         /*  31 */
         this.plugin = this.plugin;
@@ -139,7 +139,7 @@ import java.util.ArrayList;
                             p.sendMessage(ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + ChatColor.translateAlternateColorCodes('&', Messages.cfg.getString("No_Ammo")));
                         }
                         /*  95 */
-                        Bukkit.getScheduler().scheduleAsyncDelayedTask(Main.getPlugin(), new Runnable()
+                        Bukkit.getScheduler().scheduleAsyncDelayedTask(theHunterMain.getPlugin(), new Runnable()
 
                         {
                             public void run() {

@@ -8,7 +8,7 @@ package de.bypixels.thehunter.listeners;
 
 
 import de.bypixels.thehunter.gamestates.GameState;
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Scoreboard;
 import de.bypixels.thehunter.util.Settings;
@@ -16,13 +16,15 @@ import de.bypixels.thehunter.util.StatsSystem;
 import de.bypixels.thehunter.util.special.LocationCreator;
 import de.bypixels.thehunter.util.special.Variables;
 
-import net.minecraft.server.v1_12_R1.PacketPlayInClientCommand;
-import net.minecraft.server.v1_12_R1.PacketPlayOutCamera;
+
+import net.minecraft.server.v1_13_R2.PacketPlayInClientCommand;
+import net.minecraft.server.v1_13_R2.PacketPlayOutCamera;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
+
+import org.bukkit.craftbukkit.v1_13_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -39,9 +41,9 @@ import java.util.HashMap;
 public class EVENTdeath implements Listener {
     public static String winner;
     public static HashMap<Block, Inventory> DeathChest = new HashMap<>();
-    private Main plugin;
+    private theHunterMain plugin;
 
-    public EVENTdeath(Main plugin) {
+    public EVENTdeath(theHunterMain plugin) {
         this.plugin = plugin;
     }
     @SuppressWarnings("deprecation")
@@ -119,7 +121,11 @@ public class EVENTdeath implements Listener {
 
         Inventory inv = Bukkit.createInventory(null, 36,
                 ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix")) + "§6DeathChest");
-        inv.setContents(p.getInventory().getContents());
+        try {
+            inv.setContents(p.getInventory().getContents());
+        } catch (IllegalArgumentException ex) {
+
+        }
         DeathChest.put(blockchest, inv);
         e.getDrops().clear();
         p.getInventory().clear();
@@ -252,7 +258,7 @@ public class EVENTdeath implements Listener {
                 String prefix = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
                 for (Player all : Bukkit.getOnlinePlayers()) {
                     all.sendMessage(prefix + msg);
-                    all.playSound(all.getLocation(), Sound.ENTITY_LIGHTNING_THUNDER, 1, 1);
+                    all.playSound(all.getLocation(), Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1, 1);
                 }
 
             } else {
@@ -262,7 +268,7 @@ public class EVENTdeath implements Listener {
                 String prefix = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
                 for (Player all : Bukkit.getOnlinePlayers()) {
                     all.sendMessage(prefix + msg);
-                    all.playSound(all.getLocation(), Sound.ENTITY_LIGHTNING_THUNDER, 1, 1);
+                    all.playSound(all.getLocation(), Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1, 1);
                 }
             }
         } else {
@@ -272,7 +278,7 @@ public class EVENTdeath implements Listener {
             String prefix = ChatColor.translateAlternateColorCodes('&', Settings.cfg.getString("Prefix"));
             for (Player all : Bukkit.getOnlinePlayers()) {
                 all.sendMessage(prefix + msg);
-                all.playSound(all.getLocation(), Sound.ENTITY_LIGHTNING_THUNDER, 1, 1);
+                all.playSound(all.getLocation(), Sound.ENTITY_LIGHTNING_BOLT_THUNDER, 1, 1);
             }
         }
     }

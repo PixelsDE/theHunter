@@ -1,7 +1,7 @@
 package de.bypixels.thehunter.gamestates;
 
 import de.bypixels.thehunter.countdowns.LobbyCountdown;
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Settings;
 
@@ -25,7 +25,7 @@ public class LobbyState extends GameState {
 
         if (Settings.editmode == false) {
             // TODO Auto-generated method stub
-            countdown = new LobbyCountdown(Main.getPlugin());
+            countdown = new LobbyCountdown(theHunterMain.getPlugin());
 
         } else {
 

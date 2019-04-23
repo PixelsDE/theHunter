@@ -9,7 +9,7 @@ import de.bypixels.thehunter.guns.AK;
 import de.bypixels.thehunter.guns.Minigun;
 import de.bypixels.thehunter.guns.Pistol;
 import de.bypixels.thehunter.guns.Sniper;
-import de.bypixels.thehunter.main.Main;
+import de.bypixels.thehunter.main.theHunterMain;
 import de.bypixels.thehunter.util.Messages;
 import de.bypixels.thehunter.util.Settings;
 import de.bypixels.thehunter.util.Worldboarder;
@@ -24,12 +24,12 @@ import org.bukkit.entity.Player;
 public class IngameState extends GameState {
 
 	public static boolean spawners = false;
-	private static Main plugin;
+	private static theHunterMain plugin;
 	private EndCountdown endCountdown;
 
 	private int a = 1;
 
-	public IngameState(Main plugin) {
+	public IngameState(theHunterMain plugin) {
 		IngameState.plugin = plugin;
 	}
 
@@ -39,7 +39,7 @@ public class IngameState extends GameState {
 	@Override
 	public void init() {
 		if (Settings.editmode == false) {
-			endCountdown = new EndCountdown(Main.getPlugin());
+			endCountdown = new EndCountdown(theHunterMain.getPlugin());
 	//TODO this is a comment
             IngameCountdown.FinalCountDown();
 			for (int i = 0; i < Variables.playing.size(); i++) {
