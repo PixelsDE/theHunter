@@ -96,7 +96,7 @@ import java.util.ArrayList;
                         if (p.getInventory().containsAtLeast(Ammo.AKAmmo(), 1)) {
                             try {
                                 /*  89 */
-                                Snowball a = (Snowball) p.getWorld().spawn(p.getEyeLocation(), Snowball.class);
+                                Snowball a = p.getWorld().spawn(p.getEyeLocation(), Snowball.class);
                                 /*  90 */
                                 a.setVelocity(p.getLocation().getDirection().multiply(5));
                                 /*  91 */

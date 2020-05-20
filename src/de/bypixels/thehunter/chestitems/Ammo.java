@@ -22,6 +22,7 @@ public class Ammo {
         ArrayList<String> lore = new ArrayList<>();
         /* 71 */
 
+//Das system ist ehct gut oder was denkst du daber
 
         ItemStack item = new ItemStack(Weapons.AK.getammomaterial());
         /* 72 */
@@ -37,7 +38,7 @@ public class Ammo {
 
         return item;
 
-        /* 75 */
+
 
     }
 
